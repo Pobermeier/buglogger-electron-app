@@ -30,7 +30,13 @@ const LogItem = ({
         <Moment format="MMMM Do YYYY, h:mm:ss a">{new Date(created)}</Moment>
       </td>
       <td>
-        <Button variant="danger" size="sm">
+        <Button
+          variant="danger"
+          size="sm"
+          onClick={() => {
+            deleteItem(_id);
+          }}
+        >
           x
         </Button>
       </td>
