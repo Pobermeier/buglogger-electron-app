@@ -1,8 +1,12 @@
 import React from 'react';
-import { Button, Badge } from 'react-bootstrap';
 import Moment from 'react-moment';
+import Button from 'react-bootstrap/Button';
+import Badge from 'react-bootstrap/Badge';
 
-const LogItem = ({ log: { _id, priority, user, text, created } }) => {
+const LogItem = ({
+  deleteItem,
+  log: { _id, priority, user, text, created },
+}) => {
   const setVariant = () => {
     if (priority === 'high') {
       return 'danger';
@@ -17,7 +21,7 @@ const LogItem = ({ log: { _id, priority, user, text, created } }) => {
     <tr>
       <td>
         <Badge variant={setVariant()} className="p-2">
-          {priority.charAt(0).toUppercase() + priority.sclice(1)}
+          {priority.charAt(0).toUpperCase() + priority.slice(1)}
         </Badge>
       </td>
       <td>{text}</td>
