@@ -11,7 +11,7 @@ let mainWindow;
 let isDev = false;
 const isMac = process.platform === 'darwin';
 
-process.env.NODE_ENV === 'production';
+process.env.NODE_ENV = 'production';
 
 if (
   process.env.NODE_ENV !== undefined &&
