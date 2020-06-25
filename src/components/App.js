@@ -26,9 +26,12 @@ const App = () => {
       return false;
     }
 
-    item._id = Math.floor(Math.random() * 9000) + 10000;
-    item.created = new Date().toString();
-    setLogs([...logs, item]);
+    // item._id = Math.floor(Math.random() * 9000) + 10000;
+    // item.created = new Date().toString();
+    // setLogs([...logs, item]);
+
+    ipcRenderer.send('logs:add', item);
+
     showAlert('Log Added');
   };
 
