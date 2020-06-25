@@ -36,11 +36,12 @@ const App = () => {
   };
 
   const deleteItem = (_id) => {
-    setLogs(
-      logs.filter((item) => {
-        return item._id !== _id;
-      }),
-    );
+    // setLogs(
+    //   logs.filter((item) => {
+    //     return item._id !== _id;
+    //   }),
+    // );
+    ipcRenderer.send('logs:delete', _id);
     showAlert('Log Removed');
   };
 
